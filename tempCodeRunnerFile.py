@@ -1,0 +1,1 @@
+ python curve2bezier_v9.py image.png --open  
