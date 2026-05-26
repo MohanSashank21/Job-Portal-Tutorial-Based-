@@ -14,7 +14,7 @@ const Header = () =>{
    initial = {{opacity:0,y:-20}}
    animate = {{opacity:1,y:0}}
    transition= {{duration:0.8}}
-   className = "fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md shadow-sm">
+   className = "fixed top-0 left-0 right-0 z-50 bg-white/90 ">
      <div className= "container mx-auto px-4">
       <div className="flex items-center  justify-between bg-gray-50 h-12">
         {/* {logo} */}
@@ -25,7 +25,7 @@ const Header = () =>{
         <span className="text-xl font-bold ">JobPortal</span>
       </div>
       {/* navigation links  */}
-      <nav className = " sm:hidden flex items-center gap-3 ">
+      <nav className = " md:hidden flex items-center gap-3 ">
         <Link to = {jobseekerPath} className = "text-gray-600 hover:text-gray-900 transition-colors font-medium">Find Jobs</Link>
         <Link to = {employeePath} className = "text-gray-600 hover:text-gray-900 transition-colors font-medium">
         For Employers

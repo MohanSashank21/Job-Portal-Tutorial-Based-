@@ -12,7 +12,7 @@ const Hero = ()=>{
   ];
   const navigate = useNavigate();
   return (
-    <section className = "pt-16 sm:pt-20 pb-16 bg-white min-h-screen flex items-center">
+    <section className = "pt-16 sm:pt-20 pb-8 bg-white flex items-center">
       <div className = "container mx-auto px-4">
         <div className = "max-w-4xl mx-auto text-center">
         {/* heading */}
@@ -20,7 +20,7 @@ const Hero = ()=>{
          initial = {{opacity:0,y:30}}
          animate = {{opacity:1,y:0}}
          transition = {{duration:0.8}}
-         className = "text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-6 leading-tight">
+         className = " text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-6 leading-tight ">
           Find Your Dream Job or <span className = "block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text mx-auto text-transparent">Perfect Hire</span>
         </motion.h1>
         {/* subHeading */}
@@ -50,7 +50,7 @@ const Hero = ()=>{
             whileHover = {{scale:1.02}}
             whileTap = {{scale:0.98}}
             onClick = {()=>{navigate(isAuthenticated && user?.role === "employee"? "/employee/dashboard":"/login");}}
-            className = "bg-white border-2 border-gray-200 text-gray-700 px-8 py-4 rounded font-semibold hover:border-gray-300 hover:bg-gray-50 transition-all">
+            className = "bg-white border-2 border-gray-200 text-gray-700 px-8 py-2 rounded font-semibold hover:border-gray-300 hover:bg-gray-50 transition-all">
               Post a Job
             </motion.button>
             {/* stats */}
@@ -77,13 +77,7 @@ const Hero = ()=>{
               ))
             }
           </motion.div>
-
         </div>
-      </div>
-      <div className = "">
-        <div className = ""/>
-        <div className = ""/>
-        <div className = ""/>
       </div>
     </section>
   );
