@@ -2,6 +2,7 @@ import React from 'react'
 import {motion} from 'framer-motion'
 import {Mail,Lock,Eye,EyeOff,Loader,AlertCircle,CheckCircle} from 'lucide-react'
 import { useState } from 'react'
+import {validatePassword,validateEmail} from '../../Utils/helper'
 // login all related data in one object where as error, loading showpassword and success these are four different states is it ok  
 const Login = () =>
 {
@@ -20,19 +21,9 @@ const[loading,setLoading] = useState(false);
 
 const[showPassword,setShowPassword] = useState(false);
 
-const validateEmail = (email) =>{
-  if(!email.trim())
-  return 'Email is required';
-  const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
-  if(!emailRegex.test(email)) return 'please enter a valid email address';
-  return '';
-};
 
-const validatePassword = (password) =>{
-if(!password)
-return 'Please enter password';
-return '';
-};
+
+
 
 const handleInputChange = (e) =>{
     const {name,value} = e.target;
@@ -81,17 +72,18 @@ if(true){
   <div className = "min-h-screen flex items-center justofy-center bg-gray-50 px-4">
     <motion.div
     initial = {{opacity:0,scale:0.9}}
-    animate = {{opacity:1,scale:1}}
+    animate = {{opacity:1,scale:1 }}
     className = "text-center max-w-md w-full bg-white shadow-lg p-8">
         <CheckCircle className = "w-16 h-16 text-green-500 mx-auto mb-4"></CheckCircle>
         <h2 className = "text-2xl font-bold text-gray-900 mb-2"></h2>
         <p className = "text-gray-500 mb-4">You have been successfully logged in </p>
-        <div className = "animate-spin w-6 h-6 border-blue border-t-transparent rounded-full mx-auto">
+        <div className = "animate-spin w-6 h-6 border-blue-500 border-t-transparent rounded-full mx-auto">
           <p className = "text-sm text-gray-500 mb-2">Redirecting to your dashboard....</p>
         </div>
     </motion.div>
   </div>
 }
+
   return (
     <div className = "min-h-screen flex items-center justify-center bg-gray-50 px-4">
     <motion.div
@@ -120,7 +112,7 @@ if(true){
               onChange = {handleInputChange}
               placeholder = "Enter your email"
               className = {`w-full pl-10 pr-4 py-3 rounded-lg border-2 ${
-             errors.email?'border-red-500':'border-gray-300' } focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors`}>
+             errors.email?'border-red-500':'border-gray-300' } focus:ring-4 focus:ring-blue-500 focus:border-transparent transition-colors`}>
               </input>
             </div>
             {errors.email && (
@@ -144,7 +136,7 @@ if(true){
               value = {formData.password}
               onChange = {handleInputChange}
               placeholder = "Enter you Password"
-              className = {`w-full pl-10 pr-5 py-3 rounded-lg border ${errors.password ? 'border-red-500' : 'border-gray-300'} focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors`}>
+              className = {`w-full pl-10 pr-5 py-3 rounded-lg border ${errors.password ? 'border-red-500' : 'border-gray-300'} focus:ring-4 focus:ring-blue-500 focus:border-transparent transition-colors`}>
               </input>
 
               <button
