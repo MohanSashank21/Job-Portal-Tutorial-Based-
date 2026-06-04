@@ -1,0 +1,16 @@
+const express = require('express');
+
+const {updateProfile,deleteResume,getPublicProfile} = require("../controllers/userController");
+
+const {protect} = require("../middlewares/authmiddleware");
+
+const router = express.Router();
+
+//protected routes
+router.put("/profile",protect,updateProfile);
+router.post("/resume",protect,deleteResume);
+
+//public routes
+router.get("/:id",getPublicProfile);
+
+module.exports = router;

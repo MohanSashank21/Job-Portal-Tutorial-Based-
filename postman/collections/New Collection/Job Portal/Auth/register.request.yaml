@@ -1,0 +1,20 @@
+$kind: http-request
+name: register
+url: http://localhost:8000/api/auth/register
+method: POST
+body:
+  type: json
+  content: "{   \"fullName\":\"sasi\",\r
+
+    \    \"email\":\"mohansashankprayaga@gmail.com\",\r
+
+    \    \"password\":\"Mohan123@\",\r
+
+    \    \"confirmPassword\":\"Mohan123@\",\r
+
+    \    \"avatar\":\"http://localhost:8000/upload/image.png\",\r
+
+    \    \"role\":\"employee\"\r
+
+    }"
+order: 1334023791985924

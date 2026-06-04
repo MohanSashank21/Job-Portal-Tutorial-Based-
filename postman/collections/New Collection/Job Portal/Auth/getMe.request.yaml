@@ -1,0 +1,18 @@
+$kind: http-request
+name: getMe
+url: http://localhost:8000/api/auth/me
+method: GET
+body:
+  type: json
+  content: "{\r
+
+    \    \"email\":\"mohansashankprayaga@gmail.com\",\r
+
+    \    \"password\":\"Mohan123@\"\r
+
+    }"
+auth:
+  type: bearer
+  credentials:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMjExMmVkNTg4ZjFhNjAxNDFkMTA4NSIsImlhdCI6MTc4MDU1NDg1NSwiZXhwIjoxNzg1NzM4ODU1fQ.Me6Gtrljb3itiCF47k80x35pDOHBwR1M-eA9wmiYWSQ
+order: 3715281663251236

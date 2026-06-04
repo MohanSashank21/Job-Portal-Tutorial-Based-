@@ -6,7 +6,7 @@ import {validateEmail,validatePassword1,validateAvatar,validateConfirmPassword} 
 
 const SignUp = ()=> {
   const [formData,setFormData] = useState({
-    fullName:'',
+    name:'',
     email:'',
     password:'',
     confirmPassword:'',
@@ -77,7 +77,7 @@ const SignUp = ()=> {
 
   const validateForm = () =>{
     const errors = {
-      fullName :!formData.fullName.trim()?"Please enter fullName":"",
+      name :!formData.name.trim()?"Please enter your name":"",
       email:validateEmail(formData.email),
       password :validatePassword1(formData.password),
       confirmPassword : validateConfirmPassword(formData.password,formData.confirmPassword),
@@ -101,9 +101,10 @@ const SignUp = ()=> {
 
     }
     catch(error){
-      console.log("error");
+      setErrors({submit:error.response?.data?.message || "Registration failed. Please try again."});
+    }
+    finally{
       setLoading(false);
-      setErrors({submit:error.response?.data?.message || "Registration failed.Please try again."});
     }
   };
 
@@ -141,26 +142,26 @@ const SignUp = ()=> {
           <form onSubmit = {handleSubmit} className = "space-y-8">
           <div>
               <label className = "block text-sm font-medium text-gray-700 mb-2">
-                FullName:
+                Full Name:
               </label>
               <div className = "relative">
                 <User className ="absolute left-3 top-1/2 transform -translate-1/2 text-gray-400 w-5 h-5"></User>
                 <input
                 type = "text"
-                name ="fullName"
+                name ="name"
                 onChange = {handleInputChange}
-                value = {formData.fullName}
+                value = {formData.name}
                  className = {`w-full pl-10 pr-4 py-3 border rounded-lg ${
-                  errors.fullName?"border-red-500":"border-gray-300"
+                  errors.name?"border-red-500":"border-gray-300"
                 } focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors `}
                 placeholder = "Enter your full name">
                 </input>
               </div>
               
-              {errors.fullName && (
+              {errors.name && (
                <p className = "text-red-500 text-sm flex items-center mt-1">
                 <AlertCircle className ="w-4 h-4 mr-1"></AlertCircle>
-                {errors.fullName}
+                {errors.name}
                </p>
               )}
 

@@ -1,0 +1,8 @@
+$kind: http-request
+url: http://localhost:8000/api/users/6a2112ed588f1a60141d1085
+method: GET
+auth:
+  type: bearer
+  credentials:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMjExMmVkNTg4ZjFhNjAxNDFkMTA4NSIsImlhdCI6MTc4MDU4NTE0NCwiZXhwIjoxNzg1NzY5MTQ0fQ.EzLHxKlIHS9QePqYoqHGacmx6aWkBGObX7oQBpTtAdg
+order: 361209286193797

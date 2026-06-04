@@ -1,0 +1,28 @@
+$kind: http-request
+name: update-profile
+url: http://localhost:8000/api/users/profile
+method: PUT
+body:
+  type: json
+  content: "{\r
+
+    \    \"fullName\":\"sasi\",\r
+
+    \    \"avatar\":\"http://localhost:8000/upload/image.png\",\r
+
+    \    \"companyName\":\"Google\",\r
+
+    \    \"companyDescription\":\"One of the best companies in the world\",\r
+
+    \    \"companyLogo\" : \"http://localhost:8000/upload/two.jpg\",\r
+
+    \    \"role\" : \"jobseeker\",\r
+
+    \    \"resume\":\"http://localhost:8000/upload/home.jpg\"\r
+
+    }\r\n"
+auth:
+  type: bearer
+  credentials:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMjExMmVkNTg4ZjFhNjAxNDFkMTA4NSIsImlhdCI6MTc4MDU3NDMxMCwiZXhwIjoxNzg1NzU4MzEwfQ._HCNZlJAQ8FNsqePe_JPhfC08sb6bH3srlgjcOexUAc
+order: 1780573100738

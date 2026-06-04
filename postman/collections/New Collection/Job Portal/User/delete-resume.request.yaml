@@ -1,0 +1,16 @@
+$kind: http-request
+name: delete-resume
+url: http://localhost:8000/api/users/resume
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"resumeURL\" : \"http://localhost:8000/upload/home.jpg\"\r
+
+    }"
+auth:
+  type: bearer
+  credentials:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMjExMmVkNTg4ZjFhNjAxNDFkMTA4NSIsImlhdCI6MTc4MDU3NDkzMCwiZXhwIjoxNzg1NzU4OTMwfQ.wZaZRcTNHMNGLctuvTni6E6eedx_5U9ah9lneLWIUh4
+order: 176089655067095
